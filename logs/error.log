@@ -1,0 +1,469 @@
+2025-12-28 16:28:17 [error]: ValidationError: Application validation failed: applicationId: Path `applicationId` is required.
+    at Document.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3371:32)
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3132:17
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2025-12-28 16:29:22 [error]: ValidationError: Application validation failed: applicationId: Path `applicationId` is required.
+    at Document.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3371:32)
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3132:17
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2025-12-28 17:52:32 [error]: Sandbox API Error:
+2025-12-28 17:52:32 [error]: Error: Aadhaar OTP Error: Insufficient privilege
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:98:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:37:26
+2025-12-28 18:06:20 [error]: Sandbox API Error:
+2025-12-28 18:06:20 [error]: Error: Aadhaar OTP Error: Authorization header requires 'Credential' parameter. Authorization header requires 'Signature' parameter. Authorization header requires 'SignedHeaders' parameter. Authorization header requires existence of either a 'X-Amz-Date' or a 'Date' header. (Hashed with SHA-256 and encoded with Base64) Authorization=yHvIabLME6P4DgAmUXDmUNb+R9m9b3agm2+idFZfg8Q=
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:189:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:37:26
+2025-12-28 18:12:27 [error]: Sandbox API Error:
+2025-12-28 18:12:27 [error]: Error: PAN Verify Error: Authorization header requires 'Credential' parameter. Authorization header requires 'Signature' parameter. Authorization header requires 'SignedHeaders' parameter. Authorization header requires existence of either a 'X-Amz-Date' or a 'Date' header. (Hashed with SHA-256 and encoded with Base64) Authorization=jZnId+00qIB19t2R/XGRa319XxQWmNITlxNfcnErP04=
+    at SandboxApi.verifyPan (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:231:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:280:26
+2025-12-28 18:15:06 [error]: Sandbox API Error:
+2025-12-28 18:15:06 [error]: Error: PAN Verify Error: name_as_per_pan cannot be empty
+    at SandboxApi.verifyPan (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:234:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:280:26
+2025-12-28 19:54:21 [error]: Sandbox API Error:
+2025-12-28 19:54:21 [error]: Error: Aadhaar OTP Error: Invalid Aadhaar number pattern
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:189:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:37:26
+2025-12-28 21:17:34 [error]: ValidationError: Application validation failed: kyc.status: `VERIFIED` is not a valid enum value for path `kyc.status`.
+    at Document.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3371:32)
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3132:17
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2025-12-28 21:17:36 [error]: ValidationError: Application validation failed: kyc.status: `VERIFIED` is not a valid enum value for path `kyc.status`.
+    at Document.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3371:32)
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3132:17
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2025-12-28 21:17:37 [error]: ValidationError: Application validation failed: kyc.status: `VERIFIED` is not a valid enum value for path `kyc.status`.
+    at Document.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3371:32)
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3132:17
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2025-12-28 22:59:22 [error]: [E-Sign] API Failure
+2025-12-28 22:59:23 [error]: [E-Sign] API Failure
+2025-12-28 23:11:38 [error]: [E-Sign] API Failure
+2025-12-28 23:11:43 [error]: [E-Sign] API Failure
+2025-12-29 03:20:29 [error]: Sandbox API Error:
+2025-12-29 03:20:29 [error]: Error: Aadhaar Verify Error: Endpoint request timed out
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:209:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:84:26
+2025-12-29 03:46:26 [error]: Sandbox API Error:
+2025-12-29 03:46:26 [error]: Error: Aadhaar OTP Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:189:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:37:26
+2025-12-29 05:14:46 [error]: Sandbox API Error:
+2025-12-29 05:14:46 [error]: Error: Aadhaar Verify Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:209:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:84:26
+2025-12-29 05:30:18 [error]: Sandbox API Error:
+2025-12-29 05:30:18 [error]: Error: Aadhaar OTP Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:189:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:37:26
+2025-12-29 05:31:34 [error]: Sandbox API Error:
+2025-12-29 05:31:34 [error]: [Aadhaar] Verify OTP error:
+2025-12-29 05:31:34 [error]: Error: Aadhaar Verify Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:209:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:86:26
+2025-12-29 06:17:51 [error]: Sandbox API Error:
+2025-12-29 06:17:51 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-29 06:17:51 [error]: [Aadhaar Verify] Error details: Request failed with status code 500
+2025-12-29 06:17:51 [error]: [Aadhaar] Verify OTP error:
+2025-12-29 06:17:51 [error]: Error: Aadhaar Verify Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:250:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:88:26
+2025-12-29 06:25:25 [error]: Sandbox API Error:
+2025-12-29 06:25:25 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-29 06:25:25 [error]: [Aadhaar Verify] Attempt 1/2 failed: Request failed with status code 500
+2025-12-29 06:30:12 [error]: Sandbox API Error:
+2025-12-29 06:30:12 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-29 06:30:12 [error]: [Aadhaar Verify] Attempt 1/2 failed: Request failed with status code 500
+2025-12-29 08:03:13 [error]: [Aadhaar Verify] Failed: timeout of 15000ms exceeded
+2025-12-29 08:03:13 [error]: Error: timeout of 15000ms exceeded
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:87:26
+2025-12-29 13:50:59 [error]: ValidationError: Application validation failed: documents.0.type: `shopAct` is not a valid enum value for path `type`., documents.0.status: `uploaded` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3371:32)
+    at Subdocument.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/types/subdocument.js:257:12)
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3132:17
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2025-12-29 13:51:09 [error]: ValidationError: Application validation failed: documents.0.type: `udyam` is not a valid enum value for path `type`., documents.0.status: `uploaded` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3371:32)
+    at Subdocument.invalidate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/types/subdocument.js:257:12)
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/document.js:3132:17
+    at /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/mongoose/lib/schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2025-12-29 13:55:50 [error]: Sandbox API Error:
+2025-12-29 13:55:50 [error]: Sandbox authentication failed:
+2025-12-29 13:55:50 [error]: Error: Sandbox Auth Error: Error
+    at SandboxApi.authenticate (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:83:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async SandboxApi.ensureToken (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:103:13)
+    at async SandboxApi.getHeaders (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:113:9)
+    at async SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:188:25)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:37:26
+2025-12-29 14:15:47 [error]: TypeError: text.split is not a function
+    at splitText (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:49:24)
+    at fillPage1 (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:115:19)
+    at generatePDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:242:5)
+    at async generateAgreementPDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/index.js:47:12)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/agreement.js:68:27
+2025-12-29 14:15:47 [error]: TypeError: text.split is not a function
+    at splitText (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:49:24)
+    at fillPage1 (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:115:19)
+    at generatePDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:242:5)
+    at async generateAgreementPDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/index.js:47:12)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/agreement.js:68:27
+2025-12-29 14:15:48 [error]: TypeError: text.split is not a function
+    at splitText (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:49:24)
+    at fillPage1 (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:115:19)
+    at generatePDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:242:5)
+    at async generateAgreementPDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/index.js:47:12)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/agreement.js:68:27
+2025-12-29 14:15:48 [error]: TypeError: text.split is not a function
+    at splitText (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:49:24)
+    at fillPage1 (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:115:19)
+    at generatePDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:242:5)
+    at async generateAgreementPDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/index.js:47:12)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/agreement.js:68:27
+2025-12-29 14:15:52 [error]: TypeError: text.split is not a function
+    at splitText (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:49:24)
+    at fillPage1 (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:115:19)
+    at generatePDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:242:5)
+    at async generateAgreementPDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/index.js:47:12)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/agreement.js:68:27
+2025-12-29 14:15:52 [error]: TypeError: text.split is not a function
+    at splitText (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:49:24)
+    at fillPage1 (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:115:19)
+    at generatePDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/services/pdfGenerator.js:242:5)
+    at async generateAgreementPDF (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/pdf-agreement-service/src/index.js:47:12)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/agreement.js:68:27
+2025-12-29 15:58:55 [error]: Sandbox API Error:
+2025-12-29 15:58:55 [error]: Sandbox API Error: Request failed with status code 504
+2025-12-29 15:58:55 [error]: [MCA] Company verification failed: Endpoint request timed out
+2025-12-29 15:59:45 [error]: Sandbox API Error:
+2025-12-29 15:59:45 [error]: Sandbox API Error: Request failed with status code 504
+2025-12-29 15:59:45 [error]: [MCA] Company verification failed: Endpoint request timed out
+2025-12-29 16:00:45 [error]: Sandbox API Error:
+2025-12-29 16:00:45 [error]: Sandbox API Error: Request failed with status code 504
+2025-12-29 16:00:45 [error]: [MCA] Company verification failed: Endpoint request timed out
+2025-12-29 16:21:05 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-29 16:21:05 [error]: [Aadhaar] Verify OTP error:
+2025-12-29 16:21:05 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:88:26
+2025-12-29 16:46:05 [error]: [Aadhaar Verify] Failed: Request failed with status code 403
+2025-12-29 16:46:05 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:87:26
+2025-12-29 16:48:10 [error]: [Aadhaar Verify] Failed: Request failed with status code 403
+2025-12-29 16:48:10 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:87:26
+2025-12-29 16:49:03 [error]: [Aadhaar Verify] Failed: Request failed with status code 403
+2025-12-29 16:49:03 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:87:26
+2025-12-29 16:49:04 [error]: [Aadhaar Verify] Failed: Request failed with status code 403
+2025-12-29 16:49:04 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:87:26
+2025-12-29 16:49:05 [error]: [Aadhaar Verify] Failed: Request failed with status code 403
+2025-12-29 16:49:05 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:87:26
+2025-12-30 00:43:59 [error]: [Aadhaar Verify] Failed: timeout of 15000ms exceeded
+2025-12-30 00:43:59 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 00:43:59 [error]: Error: timeout of 15000ms exceeded
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:277:19)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at process.processTimers (node:internal/timers:538:9)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 02:32:39 [error]: [Aadhaar OTP] Failed: timeout of 15000ms exceeded
+2025-12-30 02:32:39 [error]: Error: timeout of 15000ms exceeded
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:224:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 02:45:53 [error]: [Aadhaar OTP] Failed: Failed to send OTP
+2025-12-30 02:45:53 [error]: Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:224:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 03:16:55 [error]: [Aadhaar OTP] Failed: Failed to send OTP
+2025-12-30 03:16:55 [error]: Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:226:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:39:26
+2025-12-30 03:18:51 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-30 03:18:51 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:279:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:87:26
+2025-12-30 04:22:06 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-30 04:22:06 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 04:22:06 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:279:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 04:25:21 [error]: [Aadhaar OTP] Failed: Failed to send OTP
+2025-12-30 04:25:21 [error]: Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:226:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 04:27:08 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-30 04:27:08 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 04:27:08 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:279:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 04:42:16 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-30 04:42:16 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 04:42:16 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:279:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 05:01:01 [error]: Sandbox API Error:
+2025-12-30 05:01:01 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-30 05:01:01 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-30 05:01:01 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 05:01:01 [error]: AxiosError: Request failed with status code 500
+    at settle (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:2106:12)
+    at Unzip.handleStreamEnd (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:3491:11)
+    at Unzip.emit (node:events:508:28)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:4731:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async SandboxApi.executeWithRetry (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:132:28)
+    at async SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:245:28)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 05:01:16 [error]: [Aadhaar OTP] Failed: OTP generated for this aadhaar, please try after 45 seconds
+2025-12-30 05:01:16 [error]: Error: OTP generated for this aadhaar, please try after 45 seconds
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:222:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 05:01:18 [error]: [Aadhaar OTP] Failed: OTP generated for this aadhaar, please try after 45 seconds
+2025-12-30 05:01:18 [error]: Error: OTP generated for this aadhaar, please try after 45 seconds
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:222:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 05:01:19 [error]: [Aadhaar OTP] Failed: OTP generated for this aadhaar, please try after 45 seconds
+2025-12-30 05:01:19 [error]: Error: OTP generated for this aadhaar, please try after 45 seconds
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:222:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 05:03:24 [error]: Sandbox API Error:
+2025-12-30 05:03:24 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-30 05:03:24 [error]: [Aadhaar OTP] Failed: Request failed with status code 500
+2025-12-30 05:03:24 [error]: AxiosError: Request failed with status code 500
+    at settle (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:2106:12)
+    at Unzip.handleStreamEnd (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:3491:11)
+    at Unzip.emit (node:events:508:28)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:4731:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async SandboxApi.executeWithRetry (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:132:28)
+    at async SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:196:28)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 05:08:48 [error]: [E-Stamp] Error: Cannot read properties of undefined (reading 'name')
+2025-12-30 05:08:53 [error]: [E-Stamp] Error: Cannot read properties of undefined (reading 'name')
+2025-12-30 05:08:54 [error]: [E-Stamp] Error: Cannot read properties of undefined (reading 'name')
+2025-12-30 05:09:10 [error]: [E-Stamp] Error: Cannot read properties of undefined (reading 'name')
+2025-12-30 05:12:08 [error]: [E-Stamp] Error: getaddrinfo ENOTFOUND dss-uat.signdesk.in
+2025-12-30 05:41:54 [error]: Sandbox API Error:
+2025-12-30 05:41:54 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-30 05:41:54 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-30 05:41:54 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 05:41:54 [error]: AxiosError: Request failed with status code 500
+    at settle (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:2106:12)
+    at Unzip.handleStreamEnd (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:3491:11)
+    at Unzip.emit (node:events:508:28)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:4731:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async SandboxApi.executeWithRetry (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:132:28)
+    at async SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:245:28)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 05:47:50 [error]: Sandbox API Error:
+2025-12-30 05:47:50 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-30 05:47:52 [error]: [Aadhaar Verify] Failed: OTP has expired. Please request a new OTP.
+2025-12-30 05:47:52 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 05:47:52 [error]: Error: OTP has expired. Please request a new OTP.
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:279:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 06:03:30 [error]: Sandbox API Error:
+2025-12-30 06:03:30 [error]: Sandbox API Error: Request failed with status code 500
+2025-12-30 06:03:30 [error]: [Aadhaar Verify] Failed: Request failed with status code 500
+2025-12-30 06:03:30 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 06:03:30 [error]: AxiosError: Request failed with status code 500
+    at settle (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:2106:12)
+    at Unzip.handleStreamEnd (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:3491:11)
+    at Unzip.emit (node:events:508:28)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:4731:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async SandboxApi.executeWithRetry (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:133:28)
+    at async SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:247:28)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 06:03:39 [error]: [Aadhaar Verify] Failed: OTP has expired. Please request a new OTP.
+2025-12-30 06:03:39 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 06:03:39 [error]: Error: OTP has expired. Please request a new OTP.
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:268:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 06:17:25 [error]: Sandbox API Error:
+2025-12-30 06:17:25 [error]: AxiosError: Request failed with status code 500
+    at settle (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:2106:12)
+    at Unzip.handleStreamEnd (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:3491:11)
+    at Unzip.emit (node:events:508:28)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/node_modules/axios/dist/node/axios.cjs:4731:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:195:26)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:38:26
+2025-12-30 06:25:43 [error]: Sandbox API Error:
+2025-12-30 06:25:43 [error]: [Aadhaar Verify] Error: Request failed with status code 500
+2025-12-30 06:25:43 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 06:25:43 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:261:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 12:42:17 [error]: Sandbox API Error:
+2025-12-30 12:42:17 [error]: Sandbox API Error: Error
+2025-12-30 12:42:17 [error]: [MCA] Company verification failed: Error
+2025-12-30 12:49:59 [error]: Sandbox API Error:
+2025-12-30 12:49:59 [error]: [MCA] Company verification failed: Request failed with status code 504
+2025-12-30 12:55:39 [error]: Sandbox API Error:
+2025-12-30 12:55:39 [error]: [MCA] Company verification failed: Request failed with status code 504
+2025-12-30 15:21:44 [error]: Sandbox API Error:
+2025-12-30 15:21:44 [error]: [Aadhaar Verify] Error: Request failed with status code 403
+2025-12-30 15:21:44 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 15:21:44 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:261:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 15:26:17 [error]: Sandbox API Error:
+2025-12-30 15:26:17 [error]: [Aadhaar Verify] Error: Request failed with status code 403
+2025-12-30 15:26:17 [error]: [Aadhaar] Verify OTP error:
+2025-12-30 15:26:17 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:261:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:89:26
+2025-12-30 15:30:17 [error]: Sandbox API Error:
+2025-12-30 15:30:17 [error]: Sandbox API Error: Request failed with status code 404
+2025-12-30 15:30:17 [error]: Error: IFSC Verify Error: Request failed with status code 404
+    at SandboxApi.verifyIfsc (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:362:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/bank.js:34:26
+2025-12-31 03:50:16 [error]: Sandbox API Error:
+2025-12-31 03:50:16 [error]: Sandbox API Error: Request failed with status code 403
+2025-12-31 03:50:16 [error]: [Bank IFSC] Verification error:
+2025-12-31 03:50:16 [error]: Error: IFSC Verify Error: Insufficient credits
+    at SandboxApi.verifyIfsc (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:362:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/bank.js:41:26
+2025-12-31 03:51:56 [error]: Sandbox API Error:
+2025-12-31 03:51:56 [error]: Sandbox API Error: Request failed with status code 403
+2025-12-31 03:51:56 [error]: [Bank IFSC] Verification error:
+2025-12-31 03:51:56 [error]: Error: IFSC Verify Error: Insufficient credits
+    at SandboxApi.verifyIfsc (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:362:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/bank.js:41:26
+2025-12-31 03:52:35 [error]: Sandbox API Error:
+2025-12-31 03:52:35 [error]: Sandbox API Error: Request failed with status code 403
+2025-12-31 03:52:35 [error]: [Bank IFSC] Verification error:
+2025-12-31 03:52:35 [error]: Error: IFSC Verify Error: Insufficient credits
+    at SandboxApi.verifyIfsc (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:362:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/bank.js:41:26
+2025-12-31 03:54:04 [error]: Sandbox API Error:
+2025-12-31 03:54:04 [error]: Sandbox API Error: Request failed with status code 403
+2025-12-31 03:54:04 [error]: [Bank IFSC] Verification error:
+2025-12-31 03:54:04 [error]: Error: IFSC Verify Error: Insufficient credits
+    at SandboxApi.verifyIfsc (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:362:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/bank.js:41:26
+2025-12-31 03:57:13 [error]: Sandbox API Error:
+2025-12-31 03:57:13 [error]: [Aadhaar OTP] Error: Request failed with status code 500
+2025-12-31 03:57:13 [error]: Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:221:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:40:26
+2025-12-31 05:05:12 [error]: Sandbox API Error:
+2025-12-31 05:05:12 [error]: [Aadhaar Verify] Error: Request failed with status code 500
+2025-12-31 05:05:12 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:261:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/partner-kyc.js:88:26
+2025-12-31 05:35:13 [error]: Sandbox API Error:
+2025-12-31 05:35:13 [error]: [Aadhaar Verify] Error: Request failed with status code 500
+2025-12-31 05:35:13 [error]: [Aadhaar] Verify OTP error:
+2025-12-31 05:35:13 [error]: Error: Failed to verify Aadhaar
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:261:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:91:26
+2025-12-31 05:36:16 [error]: Sandbox API Error:
+2025-12-31 05:36:16 [error]: [Aadhaar OTP] Error: Request failed with status code 500
+2025-12-31 05:36:16 [error]: Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:221:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:40:26
+2025-12-31 14:26:10 [error]: Sandbox API Error:
+2025-12-31 14:26:10 [error]: [IFSC] Verification failed: [object Object]
+2025-12-31 14:26:14 [error]: Sandbox API Error:
+2025-12-31 14:26:14 [error]: [IFSC] Verification failed: [object Object]
+2025-12-31 14:26:31 [error]: Sandbox API Error:
+2025-12-31 14:26:31 [error]: [IFSC] Verification failed: [object Object]
+2025-12-31 14:29:28 [error]: Sandbox API Error:
+2025-12-31 14:29:28 [error]: [IFSC] Verification failed: [object Object]
+2025-12-31 14:36:55 [error]: Sandbox API Error:
+2025-12-31 14:36:55 [error]: [Aadhaar Verify] Error: Request failed with status code 403
+2025-12-31 14:36:55 [error]: [Aadhaar] Verify OTP error:
+2025-12-31 14:36:55 [error]: Error: Insufficient credits
+    at SandboxApi.verifyAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:261:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:91:26
+2025-12-31 14:37:54 [error]: Sandbox API Error:
+2025-12-31 14:37:54 [error]: [IFSC] Verification failed: [object Object]
+2025-12-31 14:38:06 [error]: Sandbox API Error:
+2025-12-31 14:38:06 [error]: [IFSC] Verification failed: [object Object]
+2025-12-31 15:26:28 [error]: Sandbox API Error:
+2025-12-31 15:26:28 [error]: [Aadhaar OTP] Error: Request failed with status code 500
+2025-12-31 15:26:28 [error]: Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:221:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:40:26
+2025-12-31 15:26:59 [error]: Sandbox API Error:
+2025-12-31 15:26:59 [error]: [Aadhaar OTP] Error: Request failed with status code 500
+2025-12-31 15:26:59 [error]: Error: Failed to send OTP
+    at SandboxApi.generateAadhaarOtp (/Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/services/sandboxApi.js:221:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/swaraj_madhavrao_patil/Apna_Rupee_Final copy/dsa-onboarding-v4/backend/routes/kyc.js:40:26

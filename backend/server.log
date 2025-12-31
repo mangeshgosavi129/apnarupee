@@ -1,0 +1,43 @@
+2025-12-29 14:45:31 [[32minfo[39m]: Sandbox API initialized
+2025-12-29 14:45:31 [[32minfo[39m]: MongoDB Connected: localhost
+2025-12-29 14:45:31 [[32minfo[39m]: 🚀 Server running on port 3008 in development mode
+2025-12-29 14:45:31 [[32minfo[39m]: 📍 API available at http://localhost:3008/api
+2025-12-29 14:45:31 [[33mwarn[39m]: ⚠️  OTP simulation is ENABLED (dev mode)
+2025-12-29 14:46:38 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:46:38 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:46:42 [[34mdebug[39m]: POST /api/agreement/generate
+2025-12-29 14:46:42 [[32minfo[39m]: Generating PDF for:
+2025-12-29 14:46:42 [[32minfo[39m]: PDF generated for application DSA-2025-00001
+2025-12-29 14:47:09 [[34mdebug[39m]: POST /api/agreement/estamp
+2025-12-29 14:47:09 [[32minfo[39m]: Initiating E-Stamp:
+2025-12-29 14:47:09 [[32minfo[39m]: [E-Stamp] Initiating for Individual:
+2025-12-29 14:47:09 [[34mdebug[39m]: [E-Stamp] Request payload:
+2025-12-29 14:47:12 [[32minfo[39m]: [E-Stamp] Response received
+2025-12-29 14:47:12 [[32minfo[39m]: [E-Stamp] Response keys:
+2025-12-29 14:47:12 [[32minfo[39m]: [E-Stamp] Response written to /tmp/estamp_response.json
+2025-12-29 14:47:12 [[32minfo[39m]: [E-Stamp] SUCCESS - Stamp paper created:
+2025-12-29 14:47:12 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:47:14 [[34mdebug[39m]: POST /api/agreement/esign
+2025-12-29 14:47:14 [[32minfo[39m]: [E-Sign] User data:
+2025-12-29 14:47:14 [[32minfo[39m]: Initiating E-Sign for Individual:
+2025-12-29 14:47:14 [[32minfo[39m]: [E-Sign] Initiating for Individual:
+2025-12-29 14:47:14 [[34mdebug[39m]: [E-Sign] Request payload (signers):
+2025-12-29 14:47:18 [[32minfo[39m]: [E-Sign] Response received:
+2025-12-29 14:47:18 [[32minfo[39m]: [E-Sign] SUCCESS - Signing initiated:
+2025-12-29 14:47:18 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:48:32 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:48:32 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:50:59 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:50:59 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:52:06 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:52:06 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:52:08 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:52:08 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:52:09 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:52:09 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:54:28 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:54:28 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:54:35 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:54:35 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:56:15 [[34mdebug[39m]: GET /api/agreement/status
+2025-12-29 14:56:15 [[34mdebug[39m]: GET /api/agreement/status

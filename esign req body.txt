@@ -1,0 +1,81 @@
+{
+    //"symmetric_mode": "symmetric",
+    "reference_id": "{{$timestamp}}",
+    //"mode": "draft", 
+    //"enable_organisation_seal": "true",
+    // "docket_title": "abc",
+    //"remarks": "xyz",
+    //"enable_email_notification": "true",
+    //"agreement_type": "loan agreement",
+   // "loan_agreement_number": "4567",
+    //"docket_description": "asdf",
+    //"description_in_invitation": "true",
+    // "final_copy_recipients": "abc@gmail.com,bac@gmailcom",
+    //"notification_email_list": "xxxxx,xxxxx",
+    //"final_copy_phone_number_list": "12345678",
+    // "supporting_document_required": "true",
+    "expiry_date": "12-12-2025",
+    "documents": [
+        {
+            "reference_doc_id": "xyz",
+            "content_type": "pdf",
+            "content": " ",
+            "signature_sequence": "sequential",
+            //   "return_url": "xxxxx",
+            "custom": {
+                "parameter_name": "xxxxx"
+            }
+        }
+    ],
+    // "callback_file_content": "xxxxx",
+    //     "supporting_documents": [
+    //         {
+    //             "name": "xxxxx",
+    //             "content_type": "xxxxx",
+    //             "content": "xxxxx"
+    //         }
+    // ],
+    "signers_info": [
+        {
+            "document_to_be_signed": "xyz",
+            // "signature_match_image": "xxxxx",
+            "signer_position": {
+                "appearance": "top-right"
+            },
+            // "seal_info": {
+            //     "type": "xxxxx",
+            //     "top_text": "xxxxx",
+            //     "bottom_text": "xxxxx"
+            // },
+            "signer_ref_id": "123445",
+            "signer_email": "abc@gmail.com",
+            "signer_name": "abc",
+            "sequence": "1",
+            "page_number": "all",
+            // "esign_type": "xxxxx", mand. if adhar based sign
+            "signer_mobile": "1234567890",
+            // "signer_remarks": "dfx",
+            "authentication_mode": "email",
+            "signer_validation_inputs": {
+                "year_of_birth": "xxxx",
+                "gender": "F",
+                "name_as_per_aadhaar": "abc",
+                "last_four_digits_of_aadhaar": "xxxx"
+            },
+            // },
+            "signature_type": "aadhaar",
+            //"payer_email_address": "xxxxx",
+            //"payer_mobile_number": "xxxxx",
+            "trigger_esign_request": "true"
+            // "autosign_user_id": " 23456",
+            // "access_type": "lofin/otp", //dsc
+            // "cloudsign_user_id ": "xxxxx",
+            // "hsm_user_id ": "xxxxx",
+            // "captureSignerImage": "xxxxx",
+            //  "group_reference_id": "xxxxx",
+            // "trigger_esign_request_invitation": "mobile/email",
+            // "whatsapp_notification": "xxxxx"
+        }
+       
+    ]
+}
