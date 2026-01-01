@@ -140,6 +140,7 @@ function fillPage1(pages, font, data, entityType) {
 
     const address = data.residentialAddress || data.businessAddress || '';
     const lines = splitText(address, 40);
+    console.log("address",lines);
     drawText(page, lines.join(' '), fields.address_line1, font, FONT_CONFIG.smallSize);
 }
 
@@ -167,6 +168,7 @@ async function fillPage17(pdfDoc, pages, font, data, entityType) {
 
     // Applicant Name
     const nameLines = splitText(data.applicantName, 50);
+    console.log("names",nameLines);
     if (nameLines[0]) drawText(page, nameLines[0], fields.applicantName, font);
     if (nameLines[1]) drawText(page, nameLines[1], fields.applicantName_line2, font);
 
@@ -205,6 +207,7 @@ async function fillPage17(pdfDoc, pages, font, data, entityType) {
     // Residential Address (Individual only)
     if (entityType === ENTITY_TYPES.INDIVIDUAL && data.residentialAddress) {
         const addrLines = splitText(data.residentialAddress, 60);
+        console.log("address",addrLines);
         if (addrLines[0]) drawText(page, addrLines[0], fields.residentialAddress_line1, font);
         if (addrLines.length > 1) drawText(page, addrLines.slice(1).join(' '), fields.residentialAddress_line2, font);
         drawText(page, data.mobileNo, fields.residentialMobileNo, font);
@@ -219,6 +222,7 @@ function fillPage18(pages, font, data, entityType) {
     // Business Address (non-Individual)
     if (entityType !== ENTITY_TYPES.INDIVIDUAL && data.businessAddress) {
         const bizLines = splitText(data.businessAddress, 60);
+        console.log("bizLines",bizLines);
         if (bizLines[0]) drawText(page, bizLines[0], fields.businessAddress_line1, font, FONT_CONFIG.smallSize);
         if (bizLines.length > 1) drawText(page, bizLines.slice(1).join(' '), fields.businessAddress_line2, font, FONT_CONFIG.smallSize);
         drawText(page, data.businessMobileNo, fields.businessMobileNo, font);
@@ -234,6 +238,7 @@ function fillPage18(pages, font, data, entityType) {
         drawText(page, p1.mobile, f1.mobile, font);
         drawText(page, p1.email, f1.email, font);
         const addr1 = splitText(p1.address, 50);
+        console.log("addr1",addr1);
         if (addr1[0]) drawText(page, addr1[0], f1.address_line1, font, FONT_CONFIG.smallSize);
         if (addr1.length > 1) drawText(page, addr1.slice(1).join(' '), f1.address_line2, font, FONT_CONFIG.smallSize);
     }
@@ -245,6 +250,7 @@ function fillPage18(pages, font, data, entityType) {
         drawText(page, p2.mobile, f2.mobile, font);
         drawText(page, p2.email, f2.email, font);
         const addr2 = splitText(p2.address, 50);
+        console.log("addr2",addr2);
         if (addr2[0]) drawText(page, addr2[0], f2.address_line1, font, FONT_CONFIG.smallSize);
         if (addr2.length > 1) drawText(page, addr2.slice(1).join(' '), f2.address_line2, font, FONT_CONFIG.smallSize);
     }
