@@ -138,7 +138,7 @@ class EsignApi {
                     signature_sequence: 'sequential',  // Sequential: User first, Company second
                     // Redirect URL after signing - user will be redirected here
                     // Must include token for session restoration
-                    return_url: params.returnUrl || 'http://15.207.88.217:3008/onboarding?signed=true'
+                    return_url: 'http://15.207.88.217:3008/onboarding?signed=true'
                 }],
                 signers_info: signersInfo
             };

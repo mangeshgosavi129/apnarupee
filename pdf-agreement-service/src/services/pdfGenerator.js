@@ -44,20 +44,50 @@ function drawCheckbox(page, coords, font) {
     });
 }
 
+const logger = require('../utils/logger'); // adjust path if needed
+
 function splitText(text, maxChars = 60) {
-    if (!text) return [];
-    const words = text.split(' ');
+    // 1️⃣ Null / undefined guard
+    if (text === null || text === undefined) {
+        logger.warn('[PDF] splitText received null/undefined', {
+            maxChars
+        });
+        return [];
+    }
+
+    // 2️⃣ Type normalization
+    if (typeof text !== 'string') {
+        logger.warn('[PDF] splitText received non-string input', {
+            originalType: typeof text,
+            valuePreview: String(text).slice(0, 50),
+            maxChars
+        });
+        text = String(text);
+    }
+
+    // 3️⃣ Trim + empty guard
+    text = text.trim();
+    if (!text) {
+        logger.debug('[PDF] splitText received empty string after trim');
+        return [];
+    }
+
+    // 4️⃣ Actual split logic
+    const words = text.split(/\s+/);
     const lines = [];
     let currentLine = '';
+
     for (const word of words) {
-        if ((currentLine + ' ' + word).length <= maxChars) {
+        if ((currentLine + ' ' + word).trim().length <= maxChars) {
             currentLine = currentLine ? `${currentLine} ${word}` : word;
         } else {
             if (currentLine) lines.push(currentLine);
             currentLine = word;
         }
     }
+
     if (currentLine) lines.push(currentLine);
+
     return lines;
 }
 

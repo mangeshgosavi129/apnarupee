@@ -244,7 +244,7 @@ export default function Onboarding() {
                         </motion.div>
 
                         {/* Navigation */}
-                        <div className="flex items-center justify-between mt-6 pt-5 border-t border-slate-200 dark:border-slate-700">
+                        {/* <div className="flex items-center justify-between mt-6 pt-5 border-t border-slate-200 dark:border-slate-700">
                             <button
                                 onClick={() => setStep(Math.max(0, activeStep - 1))}
                                 disabled={activeStep === 0}
@@ -253,8 +253,8 @@ export default function Onboarding() {
                                 <ChevronLeft className="w-4 h-4" />
                                 Previous
                             </button>
-
-                            {/* Step Dots */}
+                            
+                            Step Dots 
                             <div className="flex items-center gap-1.5">
                                 {steps.map((_, index) => (
                                     <div
@@ -277,7 +277,7 @@ export default function Onboarding() {
                                 Next
                                 <ChevronRight className="w-4 h-4" />
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </main>
