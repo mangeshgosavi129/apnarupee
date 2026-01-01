@@ -22,7 +22,7 @@ import { kycApi } from '../../services/api';
 import { useApplicationStore } from '../../store/applicationStore';
 
 // Sandbox API key for DigiLocker SDK
-const SANDBOX_API_KEY = 'key_live_923ac677c59c4ef8bbc7cab1ef3a63a9';
+const SANDBOX_API_KEY = 'key_live_93d80931ac454b22a6f260c26cd845b3';
 
 // KYC Sub-steps (with method selection)
 const KYC_PHASES = {
