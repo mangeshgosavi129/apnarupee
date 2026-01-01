@@ -11,8 +11,8 @@ const logger = require('../utils/logger');
 const estampApi = require('../services/estampApi');
 const esignApi = require('../services/esignApi');
 
-// Import PDF Agreement Service (sibling directory to dsa-onboarding-v4)
-const pdfServicePath = path.resolve(__dirname, '../../../pdf-agreement-service/src');
+// Import PDF Agreement Service (sibling directory to backend folder)
+const pdfServicePath = path.resolve(__dirname, '../../pdf-agreement-service/src');
 const { generateAgreementPDF } = require(pdfServicePath);
 
 /**
@@ -515,4 +515,3 @@ router.post('/mark-signed', auth, async (req, res, next) => {
 });
 
 module.exports = router;
-

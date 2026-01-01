@@ -48,6 +48,12 @@ if (env.isDev()) {
 // Static Files - uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Frontend Path
+const FRONTEND_PATH = path.resolve(__dirname, '../frontend');
+
+// Serve static frontend files
+app.use(express.static(FRONTEND_PATH));
+
 // Health Check
 app.get('/health', (req, res) => {
     res.json({
@@ -111,15 +117,14 @@ app.use('/api/company', companyRoutes);
 // Directors routes (reuse company routes for director endpoints)
 app.use('/api/directors', companyRoutes);
 
-// ==================== Error Handling ====================
+// ==================== Frontend SPA Fallback ====================
 
-// 404 Handler
-app.use((req, res, next) => {
-    res.status(404).json({
-        success: false,
-        error: `Route ${req.originalUrl} not found`
-    });
+// SPA fallback - serve index.html for non-API routes (client-side routing)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(FRONTEND_PATH, 'index.html'));
 });
+
+// ==================== Error Handling ====================
 
 // Global Error Handler
 app.use(errorHandler);
