@@ -21,11 +21,12 @@ const xml2js = require('xml2js');
  * Generate Aadhaar OTP
  */
 router.post('/aadhaar/send-otp', auth, async (req, res, next) => {
+    logger.info('[Aadhaar] Send OTP request:', req.body);
     try {
         const schema = Joi.object({
             aadhaar: Joi.string().length(12).pattern(/^\d+$/).required()
         });
-
+        logger.info('[Aadhaar] Send OTP request:', schema);
         const { error, value } = schema.validate(req.body);
         if (error) {
             return res.status(400).json({
@@ -33,12 +34,13 @@ router.post('/aadhaar/send-otp', auth, async (req, res, next) => {
                 error: error.details[0].message
             });
         }
+        logger.info('[Aadhaar] Send OTP request:', value);
 
         const { aadhaar } = value;
-
+        logger.info('[Aadhaar] Send OTP request:', aadhaar);
         // Call Sandbox API
         const response = await sandboxApi.generateAadhaarOtp(aadhaar, 'Y', 'KYC Verification');
-
+        logger.info('[Aadhaar] Send OTP response:', response);
         if (response.code === 200 && response.data) {
             return res.json({
                 success: true,
@@ -47,7 +49,7 @@ router.post('/aadhaar/send-otp', auth, async (req, res, next) => {
                 transactionId: response.transaction_id
             });
         }
-
+        logger.info('[Aadhaar] Send OTP response:', response);
         res.status(400).json({
             success: false,
             error: response.message || 'Failed to send OTP'
