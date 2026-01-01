@@ -18,26 +18,33 @@ const { apiLimiter } = require('./middleware/rateLimiter');
 // Initialize Express
 const app = express();
 
-// Security Middleware
+/* =========================
+   Core Security Middleware
+========================= */
 app.use(helmet({
-    contentSecurityPolicy: false, // Disable for development
+    contentSecurityPolicy: false,
     crossOriginEmbedderPolicy: false
 }));
 
-// CORS - allow all origins in dev
 app.use(cors({
     origin: env.isDev() ? '*' : process.env.FRONTEND_URL,
     credentials: true
 }));
 
-// Body Parsing
+/* =========================
+   Body Parsers (MUST be early)
+========================= */
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Rate Limiting
-app.use('/api/', apiLimiter);
+/* =========================
+   Rate Limiting (API only)
+========================= */
+app.use('/api', apiLimiter);
 
-// Request Logging (development)
+/* =========================
+   Dev Request Logger
+========================= */
 if (env.isDev()) {
     app.use((req, res, next) => {
         logger.debug(`${req.method} ${req.path}`);
@@ -45,21 +52,14 @@ if (env.isDev()) {
     });
 }
 
-// Static Files - uploads
+/* =========================
+   Static Uploads
+========================= */
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Frontend build path (Vite)
-const FRONTEND_PATH = path.resolve(__dirname, '../frontend/dist');
-
-// Serve static frontend build
-app.use(express.static(FRONTEND_PATH));
-
-// SPA fallback
-app.get('*', (req, res) => {
-  res.sendFile(path.join(FRONTEND_PATH, 'index.html'));
-});
-
-// Health Check
+/* =========================
+   Health & Meta
+========================= */
 app.get('/health', (req, res) => {
     res.json({
         status: 'ok',
@@ -68,7 +68,6 @@ app.get('/health', (req, res) => {
     });
 });
 
-// API Info
 app.get('/api', (req, res) => {
     res.json({
         name: 'DSA Onboarding API',
@@ -77,71 +76,49 @@ app.get('/api', (req, res) => {
     });
 });
 
-// ==================== API Routes ====================
+/* =========================
+   API Routes (ALWAYS before frontend)
+========================= */
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/application', require('./routes/application'));
+app.use('/api/kyc', require('./routes/kyc'));
+app.use('/api/bank', require('./routes/bank'));
+app.use('/api/documents', require('./routes/documents'));
+app.use('/api/partners', require('./routes/partners'));
+app.use('/api/partner-kyc', require('./routes/partner-kyc'));
+app.use('/api/references', require('./routes/references'));
+app.use('/api/agreement', require('./routes/agreement'));
+app.use('/api/company', require('./routes/company'));
+app.use('/api/directors', require('./routes/company'));
 
-// Auth routes (login, OTP)
-const authRoutes = require('./routes/auth');
-app.use('/api/auth', authRoutes);
+/* =========================
+   Frontend (LAST, ALWAYS)
+========================= */
+const FRONTEND_PATH = path.resolve(__dirname, '../frontend/dist');
 
-// Application routes
-const applicationRoutes = require('./routes/application');
-app.use('/api/application', applicationRoutes);
+// Serve static frontend files
+app.use(express.static(FRONTEND_PATH));
 
-// KYC routes
-const kycRoutes = require('./routes/kyc');
-app.use('/api/kyc', kycRoutes);
-
-// Bank routes
-const bankRoutes = require('./routes/bank');
-app.use('/api/bank', bankRoutes);
-
-// Documents routes
-const documentsRoutes = require('./routes/documents');
-app.use('/api/documents', documentsRoutes);
-
-// Partners routes (Partnership entity)
-const partnersRoutes = require('./routes/partners');
-app.use('/api/partners', partnersRoutes);
-
-// Partner KYC routes (Partnership entity)
-const partnerKycRoutes = require('./routes/partner-kyc');
-app.use('/api/partner-kyc', partnerKycRoutes);
-
-// References routes
-const referencesRoutes = require('./routes/references');
-app.use('/api/references', referencesRoutes);
-
-// Agreement routes
-const agreementRoutes = require('./routes/agreement');
-app.use('/api/agreement', agreementRoutes);
-
-// Company routes (Company/LLP entity)
-const companyRoutes = require('./routes/company');
-app.use('/api/company', companyRoutes);
-
-// Directors routes (reuse company routes for director endpoints)
-app.use('/api/directors', companyRoutes);
-
-// ==================== Frontend SPA Fallback ====================
-
-// SPA fallback - serve index.html for non-API routes (client-side routing)
+// SPA fallback (non-API routes only)
 app.get('*', (req, res) => {
+    if (req.path.startsWith('/api')) {
+        return res.status(404).json({ error: 'API route not found' });
+    }
     res.sendFile(path.join(FRONTEND_PATH, 'index.html'));
 });
 
-// ==================== Error Handling ====================
-
-// Global Error Handler
+/* =========================
+   Global Error Handler
+========================= */
 app.use(errorHandler);
 
-// ==================== Server Startup ====================
-
+/* =========================
+   Start Server
+========================= */
 const startServer = async () => {
     try {
-        // Connect to MongoDB
         await connectDB();
 
-        // Start Express server
         app.listen(env.port, () => {
             logger.info(`🚀 Server running on port ${env.port} in ${env.nodeEnv} mode`);
             logger.info(`📍 API available at http://localhost:${env.port}/api`);
