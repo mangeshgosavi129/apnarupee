@@ -21,27 +21,60 @@ const xml2js = require('xml2js');
  * Generate Aadhaar OTP
  */
 router.post('/aadhaar/send-otp', auth, async (req, res, next) => {
-    logger.info('[Aadhaar] Send OTP request:', req.body);
     try {
-        const schema = Joi.object({
-            aadhaar: Joi.string().length(12).pattern(/^\d+$/).required()
+        // 1️⃣ Log RAW incoming payload (only during integration/debug)
+        logger.info('[Aadhaar] Raw request body', {
+            body: req.body
         });
-        logger.info('[Aadhaar] Send OTP request:', schema);
-        const { error, value } = schema.validate(req.body);
+
+        // 2️⃣ Validate input
+        const schema = Joi.object({
+            aadhaar: Joi.string()
+                .length(12)
+                .pattern(/^\d+$/)
+                .required()
+        });
+
+        const { error, value } = schema.validate(req.body, { abortEarly: true });
+
         if (error) {
+            logger.warn('[Aadhaar] Validation failed', {
+                message: error.details[0].message,
+                bodyKeys: Object.keys(req.body || {})
+            });
+
             return res.status(400).json({
                 success: false,
                 error: error.details[0].message
             });
         }
-        logger.info('[Aadhaar] Send OTP request:', value);
 
+        // 3️⃣ Extract validated value
         const { aadhaar } = value;
-        logger.info('[Aadhaar] Send OTP request:', aadhaar);
-        // Call Sandbox API
-        const response = await sandboxApi.generateAadhaarOtp(aadhaar, 'Y', 'KYC Verification');
-        logger.info('[Aadhaar] Send OTP response:', response);
-        if (response.code === 200 && response.data) {
+
+        // 4️⃣ Log safe metadata (NEVER log full Aadhaar)
+        logger.info('[Aadhaar] Validation success', {
+            hasAadhaar: true,
+            aadhaarLength: aadhaar.length
+        });
+
+        // 5️⃣ Call Sandbox API
+        logger.info('[Aadhaar] Calling sandbox OTP API');
+
+        const response = await sandboxApi.generateAadhaarOtp(
+            aadhaar,
+            'Y',
+            'KYC Verification'
+        );
+
+        // 6️⃣ Log provider response safely
+        logger.info('[Aadhaar] Sandbox OTP response', {
+            statusCode: response?.code,
+            hasData: Boolean(response?.data),
+            message: response?.data?.message || response?.message
+        });
+
+        if (response?.code === 200 && response?.data) {
             return res.json({
                 success: true,
                 message: response.data.message || 'OTP sent successfully',
@@ -49,12 +82,16 @@ router.post('/aadhaar/send-otp', auth, async (req, res, next) => {
                 transactionId: response.transaction_id
             });
         }
-        logger.info('[Aadhaar] Send OTP response:', response);
-        res.status(400).json({
+
+        return res.status(400).json({
             success: false,
-            error: response.message || 'Failed to send OTP'
+            error: response?.message || 'Failed to send OTP'
         });
     } catch (error) {
+        logger.error('[Aadhaar] Send OTP exception', {
+            message: error.message,
+            stack: error.stack
+        });
         next(error);
     }
 });
