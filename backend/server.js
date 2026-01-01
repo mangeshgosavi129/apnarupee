@@ -48,11 +48,16 @@ if (env.isDev()) {
 // Static Files - uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Frontend Path
-const FRONTEND_PATH = path.resolve(__dirname, '../frontend');
+// Frontend build path (Vite)
+const FRONTEND_PATH = path.resolve(__dirname, '../frontend/dist');
 
-// Serve static frontend files
+// Serve static frontend build
 app.use(express.static(FRONTEND_PATH));
+
+// SPA fallback
+app.get('*', (req, res) => {
+  res.sendFile(path.join(FRONTEND_PATH, 'index.html'));
+});
 
 // Health Check
 app.get('/health', (req, res) => {
