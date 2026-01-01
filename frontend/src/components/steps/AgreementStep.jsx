@@ -442,7 +442,7 @@ export default function AgreementStep({ onComplete }) {
                             </button>
                         </div>
                     </div>
-                    <div className="flex-1 bg-slate-100 dark:bg-slate-900/50 p-4 overflow-hidden relative">
+                    <div className="bg-slate-100 dark:bg-slate-900/50 p-4 relative h-[80vh]">
                         <iframe
                             src={`data:application/pdf;base64,${pdfBase64}`}
                             className="w-full h-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm bg-white"
