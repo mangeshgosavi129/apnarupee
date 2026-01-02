@@ -127,82 +127,39 @@ router.post('/verify', auth, async (req, res, next) => {
 
         const entityType = application.entityType;
         let aadhaarName = null;
-
-        try {
-            // STEP 1: Infer entity type from application structure
-            const isIndividual = !!application.kyc && !application.partners && !application.directors;
-            const isPartnership = Array.isArray(application.partners) && application.partners.length > 0;
-            const isCompany = Array.isArray(application.directors) && application.directors.length > 0;
-
-            // STEP 2: Validate Aadhaar verification based on inferred type
-            if (isIndividual) {
-                // Individual / Sole Proprietorship
-                if (!application.kyc?.aadhaar?.verified) {
-                    return res.status(400).json({
-                        success: false,
-                        error: 'Please complete Aadhaar verification first before bank verification'
-                    });
-                }
-
-                aadhaarName = application.kyc.aadhaar.data?.name || null;
-
-            } else if (isPartnership) {
-                // Partnership
-                const verifiedPartner = application.partners.find(
-                    p => p.kyc?.aadhaar?.verified
-                );
-
-                if (!verifiedPartner) {
-                    return res.status(400).json({
-                        success: false,
-                        error: 'At least one partner must complete Aadhaar verification before bank verification'
-                    });
-                }
-
-                // Firm account → no Aadhaar name matching
-                aadhaarName = null;
-
-            } else if (isCompany) {
-                // Company / LLP / OPC
-                const verifiedDirector = application.directors.find(
-                    d => d.kyc?.aadhaar?.verified
-                );
-
-                if (!verifiedDirector) {
-                    return res.status(400).json({
-                        success: false,
-                        error: 'At least one director must complete Aadhaar verification before bank verification'
-                    });
-                }
-
-                // Company account → no Aadhaar name matching
-                aadhaarName = null;
-
-            } else {
-                // Impossible / corrupted state
-                logger.error('[Bank Verification] Unable to infer entity type', {
-                    applicationId: application._id
-                });
-
+        // STEP 1: Check KYC verification based on entity type
+        if (['individual', 'sole_proprietorship'].includes(entityType)) {
+            // For Individual/Sole Prop: Require main Aadhaar verification
+            if (!application.kyc?.aadhaar?.verified) {
                 return res.status(400).json({
                     success: false,
-                    error: 'Invalid application structure'
+                    error: 'Please complete Aadhaar verification first before bank verification'
                 });
             }
-
-        } catch (error) {
-            logger.error('[Bank Verification] KYC validation failed unexpectedly', {
-                applicationId: application?._id,
-                message: error.message,
-                stack: error.stack
-            });
-
-            return res.status(500).json({
-                success: false,
-                error: 'Failed to validate KYC details'
-            });
+            aadhaarName = application.kyc.aadhaar.data?.name;
+        } else if (entityType === 'partnership') {
+            // For Partnership: Check if any partner is verified
+            const verifiedPartner = application.partners?.find(p => p.kyc?.aadhaar?.verified);
+            if (!verifiedPartner) {
+                return res.status(400).json({
+                    success: false,
+                    error: 'At least one partner must complete Aadhaar verification before bank verification'
+                });
+            }
+            // For firm bank accounts, we don't do name matching with individual's Aadhaar
+            aadhaarName = null;
+        } else if (['company', 'llp', 'opc'].includes(entityType)) {
+            // For Company/LLP/OPC: Check if any director is verified
+            const verifiedDirector = application.directors?.find(d => d.kyc?.aadhaar?.verified);
+            if (!verifiedDirector) {
+                return res.status(400).json({
+                    success: false,
+                    error: 'At least one director must complete Aadhaar verification before bank verification'
+                });
+            }
+            // For company bank accounts, we don't do name matching with individual's Aadhaar
+            aadhaarName = null;
         }
-
         logger.info('[Bank] Verification request:', {
             entityType,
             ifsc,
