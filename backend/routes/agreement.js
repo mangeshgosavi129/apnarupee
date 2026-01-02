@@ -363,7 +363,7 @@ router.post('/esign', auth, async (req, res, next) => {
 
             // Return URL after signing - include token for session restoration
             // The token from req.headers.authorization will be used
-            returnUrl: `http://15.207.88.217:3008/onboarding?signed=true`
+            returnUrl: `http://15.207.88.217:3008/api/signing/callback`
         };
 
         logger.info('Initiating E-Sign for Individual:', {

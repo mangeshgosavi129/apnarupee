@@ -62,35 +62,30 @@ function formatDate(date) {
 }
 
 function calculateAge(dob) {
-    if (!dob) {
-        logger.warn('[AgeCalc] Step 1 failed: DOB missing or empty');
-        return '';
-    }
-    const birthDate = new Date(dob);
-    if (Number.isNaN(birthDate.getTime())) {
-        logger.warn('[AgeCalc] Step 2 failed: Invalid DOB format', {
-            dobPreview: String(dob).slice(0, 10)
-        });
-        return '';
-    }
+    if (!dob) return '';
+
+    // Handle Aadhaar format: DD-MM-YYYY
+    const parts = dob.split('-');
+    if (parts.length !== 3) return '';
+
+    const [day, month, year] = parts.map(Number);
+    if (!day || !month || !year) return '';
+
+    const birthDate = new Date(year, month - 1, day);
+    if (Number.isNaN(birthDate.getTime())) return '';
+
     const today = new Date();
-    if (birthDate > today) {
-        logger.warn('[AgeCalc] Step 3 failed: DOB is in the future', {birthYear: birthDate.getFullYear()});
-        return '';
-    }
     let age = today.getFullYear() - birthDate.getFullYear();
+
     const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && today.getDate() < birthDate.getDate())
+    ) {
         age--;
-        logger.debug('[AgeCalc] Step 4 adjustment: Birthday not yet occurred this year');
     }
-    logger.debug('[AgeCalc] Step 5: Final validation', {computedAge: age});
-    if (age < 0) {
-        logger.error('[AgeCalc] Step 5 failed: Computed negative age', {computedAge: age});
-        return '';
-    }
-    logger.info('[AgeCalc] Success: Age calculated', {age});
-    return String(age);
+
+    return age >= 0 ? String(age) : '';
 }
 
 function formatAadhaar(aadhaar) {

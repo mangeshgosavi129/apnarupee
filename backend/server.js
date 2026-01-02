@@ -91,6 +91,17 @@ app.use('/api/agreement', require('./routes/agreement'));
 app.use('/api/company', require('./routes/company'));
 app.use('/api/directors', require('./routes/company'));
 
+// ===================================================
+// Third-party Signing Callback
+// ===================================================
+app.post('/api/signing/callback', (req, res) => {
+    logger.info('[Signing Callback] Received callback', {
+        headers: req.headers,
+        bodyKeys: Object.keys(req.body || {})
+    });
+    // Force browser to do GET on frontend route
+    res.redirect(303, '/onboarding?signed=true');
+});
 /* =========================
    Frontend (LAST, ALWAYS)
 ========================= */
