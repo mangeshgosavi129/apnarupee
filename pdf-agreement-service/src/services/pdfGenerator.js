@@ -129,7 +129,7 @@ function fillPage1(pages, font, data, entityType) {
 
     drawText(page, data.date, fields.date, font);
     drawText(page, data.name, fields.name, font);
-
+    console.log("[fillPage1]data",data);
     // Age and Aadhaar only for Individual/Proprietorship
     if (entityType === ENTITY_TYPES.INDIVIDUAL || entityType === ENTITY_TYPES.PROPRIETORSHIP) {
         drawText(page, String(data.age || ''), fields.age, font);
