@@ -170,12 +170,39 @@ router.post('/verify', auth, async (req, res, next) => {
             hasAadhaarName: !!aadhaarName
         });
 
-        // STEP 2: Call Bank Verification API
+        // STEP 2: Call Bank Verification API (penniless → fallback to penny)
         let response;
-        if (method === 'penniless') {
-            response = await sandboxApi.verifyBankAccountPenniless(ifsc, accountNumber, accountHolderName);
-        } else {
-            response = await sandboxApi.verifyBankAccountPenny(ifsc, accountNumber, accountHolderName);
+
+        try {
+            response = await sandboxApi.verifyBankAccountPenniless(
+                ifsc,
+                accountNumber,
+                accountHolderName
+            );
+            logger.info('[Bank Verification] Penniless verification succeeded');
+        } catch (pennilessError) {
+            logger.warn('[Bank Verification] Penniless verification failed, falling back to penny', {
+                message: pennilessError.message
+            });
+
+            try {
+                response = await sandboxApi.verifyBankAccountPenny(
+                    ifsc,
+                    accountNumber,
+                    accountHolderName
+                );
+                logger.info('[Bank Verification] Penny verification succeeded');
+            } catch (pennyError) {
+                logger.error('[Bank Verification] Both verification methods failed', {
+                    pennilessError: pennilessError.message,
+                    pennyError: pennyError.message
+                });
+
+                return res.status(502).json({
+                    success: false,
+                    error: 'Bank verification failed. Please try again later.'
+                });
+            }
         }
 
         logger.info('[Bank] API Response:', {

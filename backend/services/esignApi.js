@@ -135,9 +135,7 @@ class EsignApi {
                     reference_doc_id: docRefId,
                     content_type: 'pdf',
                     content: params.documentContent,
-                    signature_sequence: 'sequential',  // Sequential: User first, Company second
-                    // Redirect URL after signing - user will be redirected here
-                    // Must include token for session restoration
+                    signature_sequence: 'sequential',
                     return_url: params.returnUrl
                 }],
                 signers_info: signersInfo
