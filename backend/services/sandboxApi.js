@@ -293,8 +293,8 @@ class SandboxApi {
                 consent: consent,
                 reason: reason
             });
-
-            logger.info('PAN verified:', response.data?.status);
+            //if error then throw error
+            logger.info('PAN verified:', response);
             return response;
         } catch (error) {
             const message = error.response?.data?.message || error.message;

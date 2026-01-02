@@ -128,19 +128,46 @@ function fillPage1(pages, font, data, entityType) {
     const fields = COORDINATES.page1.fields;
 
     drawText(page, data.date, fields.date, font);
-    drawText(page, data.name, fields.name, font);
+    if (entityType === ENTITY_TYPES.INDIVIDUAL || entityType === ENTITY_TYPES.PROPRIETORSHIP) {
+        drawText(page, data.name, fields.name, font);
+    }
+    if (entityType === ENTITY_TYPES.PARTNERSHIP) {
+        drawText(page, data.persons[0].name, fields.name, font);
+    }
     console.log("[fillPage1]data",data);
     // Age and Aadhaar only for Individual/Proprietorship
     if (entityType === ENTITY_TYPES.INDIVIDUAL || entityType === ENTITY_TYPES.PROPRIETORSHIP) {
         drawText(page, String(data.age || ''), fields.age, font);
         drawText(page, data.aadhaar, fields.aadhaar, font);
     }
+    if (entityType === ENTITY_TYPES.PARTNERSHIP) {
+        drawText(page, String(data.age || ''), fields.age, font);
+        drawText(page, data.aadhaar, fields.aadhaar, font);
+    }
 
     drawText(page, data.pan, fields.pan, font);
 
-    const address = data.residentialAddress || data.businessAddress || '';
+    let address = '';
+
+    if (entityType === ENTITY_TYPES.PARTNERSHIP) {
+        // Partnership: address may be object inside persons[]
+        const partnerAddr = data.persons[0].address;
+
+        if (typeof partnerAddr === 'string') {
+            address = partnerAddr;
+        } else if (typeof partnerAddr === 'object' && partnerAddr !== null) {
+            address = Object.values(partnerAddr)
+                .filter(v => typeof v === 'string' && v.trim())
+                .join(', ');
+        } else {
+            address = '';
+        }
+    } else {
+        // Individual / Proprietorship
+        address = data.residentialAddress || data.businessAddress || '';
+    }
     const lines = splitText(address, 40);
-    console.log("address",lines);
+    console.log("[fillPage1]address",lines);
     drawText(page, lines.join(' '), fields.address_line1, font, FONT_CONFIG.smallSize);
 }
 
