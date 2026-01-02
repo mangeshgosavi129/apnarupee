@@ -13,7 +13,7 @@ const { ENTITY_TYPES } = require('../config/constants');
 function mapIndividualData(application) {
     const kyc = application.kyc || {};
     const references = application.references || [];
-
+    console.log("[MAP INDIVIDUAL DATA] KYC : ", kyc)
     return {
         entityType: ENTITY_TYPES.INDIVIDUAL,
 

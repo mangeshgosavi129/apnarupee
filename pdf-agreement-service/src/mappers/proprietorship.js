@@ -14,7 +14,7 @@ function mapProprietorshipData(application) {
     const kyc = application.kyc || {};
     const references = application.references || [];
     const docs = application.documents || [];
-
+    console.log("[MAP PROPRIETORSHIP DATA] KYC : ", kyc)
     // Get business address from documents (Shop Act / Udyam / GST)
     const businessDoc = docs.find(d => ['shopAct', 'udyam', 'gst'].includes(d.type));
     const businessAddress = businessDoc?.data?.address || application.businessAddress || '';

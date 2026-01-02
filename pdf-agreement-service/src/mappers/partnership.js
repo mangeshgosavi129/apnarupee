@@ -14,7 +14,7 @@ function mapPartnershipData(application) {
     const partners = application.partners || [];
     const signatory = partners.find(p => p.isSignatory) || partners[0] || {};
     const docs = application.documents || [];
-
+    console.log(signatory)
     // Get business address from docs
     const gstDoc = docs.find(d => d.type === 'gst');
     const businessAddress = gstDoc?.data?.address || application.businessAddress || '';
@@ -29,7 +29,7 @@ function mapPartnershipData(application) {
         // Page 1 - Party Details (Firm)
         date: formatDate(new Date()),
         name: application.firmName || application.name || '',
-        age: '',  // Not applicable for firms
+        age: calculateAge(signatory.kyc.aadhaar?.data?.dob || signatory.kyc.aadhaar?.data?.date_of_birth),  // Not applicable for firms
         pan: firmPan,
         aadhaar: '',  // Not applicable for firms
         residentialAddress: businessAddress,  // Use business address
