@@ -58,17 +58,31 @@ function formatDate(date) {
     return `${day}-${month}-${year}`;
 }
 
-// Helper: Calculate age from DOB
 function calculateAge(dob) {
     if (!dob) return '';
-    const birthDate = new Date(dob);
+
+    // Handle Aadhaar format: DD-MM-YYYY
+    const parts = dob.split('-');
+    if (parts.length !== 3) return '';
+
+    const [day, month, year] = parts.map(Number);
+    if (!day || !month || !year) return '';
+
+    const birthDate = new Date(year, month - 1, day);
+    if (Number.isNaN(birthDate.getTime())) return '';
+
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
+
     const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && today.getDate() < birthDate.getDate())
+    ) {
         age--;
     }
-    return age > 0 ? String(age) : '';
+
+    return age >= 0 ? String(age) : '';
 }
 
 // Helper: Format Aadhaar with spaces
