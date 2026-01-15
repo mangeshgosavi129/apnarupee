@@ -155,7 +155,7 @@ export default function Login() {
                             <span className="text-white font-bold text-lg">₹</span>
                         </div>
                         <span className="text-xl font-bold text-slate-800 dark:text-white">
-                            Apna Rupee
+                            GraphSense Solutions
                         </span>
                     </div>
                 </motion.div>

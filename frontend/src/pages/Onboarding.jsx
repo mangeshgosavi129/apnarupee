@@ -113,7 +113,7 @@ export default function Onboarding() {
                                 </div>
                                 <div className="hidden sm:block">
                                     <h1 className="text-base font-bold text-slate-900 dark:text-white">DSA Onboarding</h1>
-                                    <p className="text-xs text-slate-500">Powered by Apna Rupee</p>
+                                    <p className="text-xs text-slate-500">Powered by GraphSense Solutions</p>
                                 </div>
                             </div>
 

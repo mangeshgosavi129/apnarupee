@@ -224,7 +224,7 @@ export default function KycStep({ onComplete }) {
                 const options = {
                     session_id: sessionId,
                     brand: {
-                        name: 'Apna Rupee',
+                        name: 'Graphsense Solutions',
                         logo_url: 'https://apnarupee.com/logo.png',
                     },
                     theme: {

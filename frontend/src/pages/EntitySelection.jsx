@@ -116,7 +116,7 @@ export default function EntitySelection() {
                             <span className="text-white font-bold text-lg">₹</span>
                         </div>
                         <span className="text-xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-                            Apna Rupee
+                            Graphsense Solutions
                         </span>
                     </div>
                 </motion.div>
